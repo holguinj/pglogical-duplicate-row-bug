@@ -20,10 +20,11 @@ This repo is designed to carry out the following:
 
 ## steps
 
-* run `docker-compose up` to bring up the primary (pg port 5434) and replica (pg port 5433) containers.
-* once they've started, run `cd repro-clj && lein run` to begin hitting the DB
-* when repro-clj tells you to, run `./subscribe.sh` to begin the subscription
-* check for error logs on the primary and replica containers
+  0. run `./rebuild-images.sh` to create the two docker images we need
+  1. run `docker-compose up` to bring up the primary (pg port 5434) and replica (pg port 5433) containers.
+  2. once they've started, run `cd repro-clj && lein run` to begin hitting the DB
+  3. when repro-clj tells you to, run `./subscribe.sh` to begin the subscription
+  4. check for error logs on the primary and replica containers
 
 Optionally, you can connect to the primary or replica with psql using the following commands:
 
