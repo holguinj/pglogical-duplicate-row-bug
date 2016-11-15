@@ -7,7 +7,7 @@ CREATE EXTENSION pglogical;
 -- Create the provider node
 SELECT pglogical.create_node(
        node_name := 'repro_provider',
-       dsn := 'dbname=repro_primary host=localhost port=5434'
+       dsn := 'dbname=repro_primary host=primary port=5432'
 );
 
 -- Smoke table

@@ -12,6 +12,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" > /etc/
 
 # VOLUME /var/lib/postgresql/data # re-volume this so that the config file changes take???
 
+RUN echo "host    replication          postgres                172.18.0.0/16   trust" >> /usr/share/postgresql/9.4/pg_hba.conf.sample
 RUN echo "host    replication          postgres                ::1/128         trust" >> /usr/share/postgresql/9.4/pg_hba.conf.sample
 RUN echo "shared_preload_libraries = 'pglogical'" >> /usr/share/postgresql/postgresql.conf.sample
 RUN echo "wal_level = 'logical'" >> /usr/share/postgresql/postgresql.conf.sample

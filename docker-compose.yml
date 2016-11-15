@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  primary:
+    image: pg-primary
+    container_name: pg_primary
+    networks:
+      - dockernet
+    ports:
+      - "5434:5432"
+  replica:
+    image: pg-replica
+    container_name: pg_replica
+    networks:
+      - dockernet
+    ports:
+      - "5433:5432"
+
+networks:
+  dockernet:
+    driver: bridge

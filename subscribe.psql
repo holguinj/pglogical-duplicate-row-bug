@@ -1,0 +1,6 @@
+\c repro_replica
+SELECT pglogical.create_subscription(
+       subscription_name := 'repro_subscription',
+       provider_dsn := 'dbname=repro_primary host=primary port=5432',
+       synchronize_structure := TRUE
+);
